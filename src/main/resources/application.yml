@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: local
+
+server:
+  port: 9091
+
+management:
+  server:
+    port: 18080
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
+          - health
+          - info
+  endpoint:
+    prometheus:
+      enabled: true
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
